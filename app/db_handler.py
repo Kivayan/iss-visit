@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class ISSTracker:
+class ISS_DBHandler:
     def __init__(self, db_path: str = "data/iss_visits.db"):
         self.db_path = db_path
         self.init_database()

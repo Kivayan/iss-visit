@@ -13,7 +13,7 @@ RUN pip install uv
 RUN uv sync --frozen
 
 # Copy application code
-COPY main.py .
+COPY app/ ./app/
 
 # Create data directory for SQLite database
 RUN mkdir -p /data
@@ -23,4 +23,4 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 
 # Run the application
-CMD ["uv", "run", "python", "main.py"]
+CMD ["uv", "run", "python", "-m", "app.main"]
