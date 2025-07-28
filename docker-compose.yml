@@ -1,0 +1,9 @@
+services:
+  iss-visit:
+    build: .
+    container_name: iss-visit
+    volumes:
+      - ./data:/data  # Mount local data directory to container's /data
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
